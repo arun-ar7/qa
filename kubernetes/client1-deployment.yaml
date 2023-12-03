@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client 
+  
+  template:
+    metadata:
+      labels:
+        app: client
+      
+    spec:
+      containers:
+        - name: client
+          image: naveens01/client:v1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
+
+          volumeMounts:
+            - mountPath: /config
+              name: config
+
+      volumes:
+        - name: config
+          configMap:
+            name: config-map
+            items:
+              - key: BACKEND_API
+                path: BACKEND_API

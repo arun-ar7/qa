@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map 
+data:
+  BACKEND_API: "mongodb+srv://naveens01:naveen123@cluster0.ehk58jz.mongodb.net/"
+  mongo-url: mongo-service
+  

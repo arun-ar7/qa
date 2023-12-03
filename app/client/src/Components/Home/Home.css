@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logoutButton {
+  background-color: rgb(224, 2, 87);
+  padding: 6px;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}

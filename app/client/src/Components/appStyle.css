@@ -1,0 +1,5 @@
+.appBackground {
+  background-image: url("../assets/sagLogo.png");
+  background-size: cover;
+  background-position: center;
+}
